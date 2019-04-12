@@ -19,3 +19,8 @@ class ProfileAdmin(admin.ModelAdmin):
     list_editable = ('phone_number', 'website', 'picture')
     search_fields = ('user__email', 'user__first_name', 'user__last_name', 'phone_number')
     list_filter = ('created', 'modified')
+    fieldsets = (
+    	('Profile', {
+    		'fields': ('user', 'picture'),
+    	}),
+    )
